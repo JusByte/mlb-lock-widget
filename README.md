@@ -10,8 +10,10 @@ When your team is playing, it switches into a live* scoreboard view. When they a
 
 - Shows the live score, inning, and outs during games
 <img src="./images/detail-1.png" width=400>
+
 - Shows the next scheduled game and previous score when no game is live
 <img src="./images/detail-2.png" width=400>
+
 - Opens [MLB Gameday](https://www.mlb.com/gameday/) when you tap the widget
 
 ## Install
