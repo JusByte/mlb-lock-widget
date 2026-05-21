@@ -231,7 +231,16 @@ async function createModel() {
   const schedule = await loadSchedule(now);
   const games = flattenGames(schedule);
 
-  const liveGame = games.find(g => isLiveStatus(g.status));
+  const liveGame = games.find(g => {
+    const code = g.status?.codedGameState;
+    const detailed = (g.status?.detailedState || "").toLowerCase();
+  
+    return (
+      code === "I" &&
+      !detailed.includes("pre-game") &&
+      !detailed.includes("warmup")
+    );
+  });
   const { lastFinal, nextGame } = pickLastFinalAndNext(games, now);
 
   // LIVE
